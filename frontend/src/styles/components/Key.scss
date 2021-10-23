@@ -1,0 +1,23 @@
+@import '../commons.scss';
+
+.key {
+  width: 1em;
+  height: 5em;
+  background: $white;
+  border: 1px solid $key_border;
+  top: 0;
+  z-index: 0;
+
+  &.sus {
+    position: absolute;
+    width: 0.8em;
+    height: 3em;
+    background: $black;
+    transform: translate(0.6em, 0);
+    z-index: 1;
+  }
+
+  &.played {
+    background: $key_played !important;
+  }
+}

@@ -11,9 +11,14 @@ Components:
 */
 
 import React from 'react'
+import Octave from '../components/Octave'
 
 function GameScreen() {
-  return <div></div>
+  return (
+    <div>
+      <Octave />
+    </div>
+  )
 }
 
 export default GameScreen
