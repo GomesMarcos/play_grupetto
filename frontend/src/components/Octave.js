@@ -1,31 +1,31 @@
 import React from 'react'
 import Key from './Key'
 
-function Octave() {
+function Octave({ octave }) {
   return (
     <div className="octave">
       <div className="key-wrapper">
-        <Key note="do" />
-        <Key note="do#" />
+        <Key note="C" />
+        <Key note="C#" />
       </div>
       <div className="key-wrapper">
-        <Key note="re" />
-        <Key note="re#" />
+        <Key note="D" />
+        <Key note="D#" />
       </div>
-      <Key note="mi" />
+      <Key note="E" />
       <div className="key-wrapper">
-        <Key note="fa" />
-        <Key note="fa#" />
-      </div>
-      <div className="key-wrapper">
-        <Key note="sol" />
-        <Key note="sol#" />
+        <Key note="F" />
+        <Key note="F#" />
       </div>
       <div className="key-wrapper">
-        <Key note="la" />
-        <Key note="la#" />
+        <Key note="G" />
+        <Key note="G#" />
       </div>
-      <Key note="si" />
+      <div className="key-wrapper">
+        <Key note="A" />
+        <Key note="A#" />
+      </div>
+      <Key note="B" />
     </div>
   )
 }

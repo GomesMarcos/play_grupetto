@@ -1,0 +1,36 @@
+{
+  "settings": [
+    {
+      "id": 1,
+      "interval": 1,
+      "difficulty": 1,
+      "direction": 3,
+      "octaves": 2
+    },
+    {
+      "id": 2,
+      "interval": 2,
+      "difficulty": 2,
+      "direction": 3,
+      "octaves": 2
+    }
+  ],
+  "users": [
+    {
+      "id": "123jcoij23",
+      "name": "Raphael Rabello",
+      "high_score": 5513,
+      "last_score": 12,
+      "last_score_date": 1634963621236,
+      "settings": 1
+    },
+    {
+      "id": "123jcoij32",
+      "name": "Mario Ulloa",
+      "high_score": 55130,
+      "last_score": 1200,
+      "last_score_date": 1634963611236,
+      "settings": 2
+    }
+  ]
+}

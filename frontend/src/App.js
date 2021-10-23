@@ -12,7 +12,7 @@ function App() {
       <Header />
       <main className="py-3">
         <Container>
-          <GameScreen />
+          <GameScreen user_id="123jcoij23" />
           <Route path="/" component={HomeScreen} />
           <Route path="/" />
           <Route path="/" />
