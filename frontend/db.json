@@ -5,14 +5,20 @@
       "interval": 1,
       "difficulty": 1,
       "direction": 3,
-      "octaves": 2
+      "octaves": [
+        3,
+        4
+      ]
     },
     {
       "id": 2,
-      "interval": 2,
-      "difficulty": 2,
+      "interval": 1,
+      "difficulty": 1,
       "direction": 3,
-      "octaves": 2
+      "octaves": [
+        4,
+        5
+      ]
     }
   ],
   "users": [
@@ -22,7 +28,15 @@
       "high_score": 5513,
       "last_score": 12,
       "last_score_date": 1634963621236,
-      "settings": 1
+      "settings": {
+        "interval": 1,
+        "difficulty": 1,
+        "direction": 3,
+        "octaves": [
+          3,
+          4
+        ]
+      }
     },
     {
       "id": "123jcoij32",

@@ -11,32 +11,25 @@ Components:
 */
 
 import React from 'react'
-import * as Tone from 'tone'
-import axios from 'axios'
 import { EASY_INTERVALS, MEDIUM_INTERVALS, HARD_INTERVALS, NOTES } from '../constants'
-
 import Octave from '../components/Octave'
+import * as Tone from 'tone'
+import Sound from '../components/Sound'
 
 function GameScreen({ user_settings }) {
-  const setted_intervals = get_intervals_by_difficulty(user_settings.difficulty)
-  const interval = get_interval(setted_intervals, user_settings.direction)
-
-  //create a synth and connect it to the main output (your speakers)
-  const synth = new Tone.Synth().toDestination()
-
-  //play a middle 'C' for the duration of an 8th note
-  console.log(interval)
-  console.log(`${NOTES[interval[0]]}`, `${NOTES[interval[1]]}`)
-  // synth.triggerAttackRelease(`${NOTES[interval[0]]}`, '8n')
-  // synth.triggerAttackRelease(`${NOTES[interval[1]]}`, '8n')
+  const setted_intervals = get_intervals_by_difficulty(user_settings.difficulty),
+    direction = user_settings.direction,
+    interval = get_interval(setted_intervals, direction),
+    octaves = user_settings.octaves,
+    octave_played = octaves[Math.floor(Math.random() * octaves.length)],
+    interval_notes = [NOTES[interval[0]], NOTES[interval[1]]]
 
   return (
-    <div>
-      <div className="octave">
-        <Octave octave="3" />
-        <Octave octave="4" />
-        <Octave octave="5" />
-      </div>
+    <div className="octave">
+      <Sound octave_played={octave_played} interval_notes={interval_notes} />
+      {octaves.map((octave) => (
+        <Octave key={octave} octave={octave} interval={interval_notes} />
+      ))}
     </div>
   )
 }
@@ -56,7 +49,7 @@ function set_interval() {
 
 function validate_interval(interval, direction, settings_intervals) {
   const subtracted_interval = Math.abs(interval[0] - interval[1])
-  const is_interval_in_settings_intervals = settings_intervals[subtracted_interval] != undefined
+  const is_interval_in_settings_intervals = settings_intervals[subtracted_interval] !== undefined
 
   // If Ascendent Interval
   if (direction === 1 && interval[0] <= interval[1] && is_interval_in_settings_intervals) {
