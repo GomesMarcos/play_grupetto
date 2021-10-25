@@ -5,7 +5,7 @@ from rest_framework import fields, serializers
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ['__all__']
+        fields = ('__all__')
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

@@ -1,9 +1,9 @@
 import React from 'react'
 import Key from './Key'
 
-function Octave({ octave, interval }) {
+function Octave({ octave, interval, is_enabled }) {
   return (
-    <div className="octave">
+    <div className={`octave${is_enabled ? ' enabled' : ' disabled'}`}>
       <div className="key-wrapper">
         <Key
           note="C"

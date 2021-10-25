@@ -7,8 +7,6 @@ function Key({ note, is_playing, first_note, last_note }) {
 
   const [isPlayingClass, setIsPlayingClass] = useState(is_playing ? ' is-playing' : '')
 
-  console.log(isPlayingClass)
-
   setTimeout(() => {
     setIsPlayingClass('')
   }, 1000)

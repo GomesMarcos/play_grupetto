@@ -14,13 +14,3 @@ function Sound({ interval_notes, is_chord = 1 }) {
 }
 
 export default Sound
-
-function remove_is_playing() {
-  const is_playing = document.getElementsByClassName('is-playing')
-  console.log(is_playing)
-  is_playing.forEach((note) => {
-    setTimeout(() => {
-      note.classList.remove('is_playing')
-    }, 500)
-  })
-}

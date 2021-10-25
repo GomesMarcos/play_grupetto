@@ -11,9 +11,9 @@ Components:
 */
 
 import React from 'react'
-import { EASY_INTERVALS, MEDIUM_INTERVALS, HARD_INTERVALS, NOTES } from '../constants'
 import Octave from '../components/Octave'
 import Sound from '../components/Sound'
+import { AVAILABE_OCTAVES, EASY_INTERVALS, HARD_INTERVALS, MEDIUM_INTERVALS, NOTES } from '../constants'
 
 function GameScreen({ user_settings }) {
   const settings_intervals = get_intervals_by_difficulty(user_settings.difficulty),
@@ -28,11 +28,16 @@ function GameScreen({ user_settings }) {
     ]
 
   return (
-    <div className="octave">
+    <div className="octave-wrapper">
       <Sound interval_notes={interval_notes} is_chord={interval_nature} />
-      {octaves.map((octave) => (
-        <Octave key={octave} octave={octave} interval={interval_notes} />
-      ))}
+      {
+        AVAILABE_OCTAVES.map((available) =>
+          < Octave key={available} octave={available} interval={interval_notes} is_enabled={octaves.includes(available) ? true : false} />
+          // octaves.map((octave) => (
+          // ))
+
+        )
+      }
     </div>
   )
 }

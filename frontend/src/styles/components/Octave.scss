@@ -1,6 +1,16 @@
 .octave {
   display: flex;
   justify-content: center;
+  
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+    
+    .disabled {
+      background: $disabled_octave_bg;
+    }
+  }
+
 }
 
 .key-wrapper {
