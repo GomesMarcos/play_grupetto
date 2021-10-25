@@ -44,7 +44,15 @@
       "high_score": 55130,
       "last_score": 1200,
       "last_score_date": 1634963611236,
-      "settings": 2
+      "settings": {
+        "interval": 2,
+        "difficulty": 3,
+        "direction": 1,
+        "octaves": [
+          4,
+          5
+        ]
+      }
     }
   ]
 }

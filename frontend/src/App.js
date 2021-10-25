@@ -9,7 +9,7 @@ import axios from 'axios'
 import Loader from './components/Loader'
 
 function App() {
-  const loggedUserId = '123jcoij23' // mock
+  const loggedUserId = '123jcoij32' // mock
   const [user, getUser] = useState({})
 
   useEffect(() => {
@@ -20,14 +20,12 @@ function App() {
     fetchUser()
   }, [])
 
-  console.log(user)
-
   return (
     <BrowserRouter className="App">
       <Header />
       <main className="py-3">
         <Container>
-          {user.settings === undefined ? <Loader /> : <GameScreen user_settings={user.settings} />}
+          {user.data === undefined ? <Loader /> : <GameScreen user_settings={user.data.settings} />}
           <Route path="/" component={HomeScreen} />
         </Container>
       </main>
