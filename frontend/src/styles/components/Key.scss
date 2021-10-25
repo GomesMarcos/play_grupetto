@@ -1,5 +1,3 @@
-@import '../commons.scss';
-
 .key {
   width: 1em;
   height: 5em;
@@ -7,6 +5,7 @@
   border: 1px solid $key_border;
   top: 0;
   z-index: 0;
+  transition: all ease-in-out 0.15s;
 
   &.sus {
     position: absolute;
@@ -17,7 +16,15 @@
     z-index: 1;
   }
 
-  &.played {
-    background: $key_played !important;
+  &.is-playing {
+    background: $key_played;
   }
+
+  &.first {
+    transition-delay: 0s;
+  }
+
+  // &.second {
+  //   transition-delay: 0.5s;
+  // }
 }
