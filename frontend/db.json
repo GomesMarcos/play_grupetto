@@ -49,8 +49,8 @@
         "difficulty": 3,
         "direction": 1,
         "octaves": [
-          4,
-          5
+          3,
+          6
         ]
       }
     }

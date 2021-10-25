@@ -5,6 +5,7 @@
   border: 1px solid $key_border;
   top: 0;
   z-index: 0;
+  transition: all ease-in-out 0.15s;
 
   &.sus {
     position: absolute;
@@ -16,6 +17,14 @@
   }
 
   &.is-playing {
-    background: $key_played !important;
+    background: $key_played;
+  }
+
+  &.first {
+    transition-delay: 0s;
+  }
+
+  &.second {
+    transition-delay: 0.5s;
   }
 }
