@@ -11,6 +11,7 @@ Components:
 */
 
 import React from 'react'
+import Answer from '../components/Answer'
 import Octave from '../components/Octave'
 import Sound from '../components/Sound'
 import { AVAILABE_OCTAVES, EASY_INTERVALS, HARD_INTERVALS, MEDIUM_INTERVALS, NOTES } from '../constants'
@@ -19,6 +20,7 @@ function GameScreen({ user_settings }) {
   const settings_intervals = get_intervals_by_difficulty(user_settings.difficulty),
     direction = user_settings.direction,
     interval = get_interval(settings_intervals, direction),
+    semitones = Math.abs(interval[0] - interval[1]),
     octaves = user_settings.octaves,
     interval_nature = user_settings.interval,
     octave_played = octaves[Math.floor(Math.random() * octaves.length)],
@@ -28,16 +30,17 @@ function GameScreen({ user_settings }) {
     ]
 
   return (
-    <div className="octave-wrapper">
-      <Sound interval_notes={interval_notes} is_chord={interval_nature} />
-      {
-        AVAILABE_OCTAVES.map((available) =>
-          < Octave key={available} octave={available} interval={interval_notes} is_enabled={octaves.includes(available) ? true : false} />
-          // octaves.map((octave) => (
-          // ))
+    <div className="game">
+      <div className="octave-wrapper">
+        <Sound interval_notes={interval_notes} is_chord={interval_nature} />
+        {
+          AVAILABE_OCTAVES.map((available) =>
+            < Octave key={available} octave={available} interval={interval_notes} is_enabled={octaves.includes(available) ? true : false} />
+          )
+        }
+      </div>
 
-        )
-      }
+      <Answer settings_intervals={settings_intervals} semitones={semitones} />
     </div>
   )
 }
@@ -56,8 +59,8 @@ function set_interval() {
 }
 
 function validate_interval(interval, direction, settings_intervals) {
-  const subtracted_interval = Math.abs(interval[0] - interval[1])
-  const is_interval_in_settings_intervals = settings_intervals[subtracted_interval] !== undefined
+  const semitones = Math.abs(interval[0] - interval[1])
+  const is_interval_in_settings_intervals = settings_intervals[semitones] !== undefined
 
   // If is valid interval
   if (is_interval_in_settings_intervals) {
@@ -86,15 +89,15 @@ function validate_interval(interval, direction, settings_intervals) {
 function get_intervals_by_difficulty(difficulty) {
   switch (difficulty) {
     case 1:
-      return EASY_INTERVALS
+      return Object.assign({}, EASY_INTERVALS)
 
     case 2:
-      return EASY_INTERVALS + MEDIUM_INTERVALS
+      return Object.assign({}, EASY_INTERVALS, MEDIUM_INTERVALS)
 
     case 3:
-      return EASY_INTERVALS + MEDIUM_INTERVALS + HARD_INTERVALS
+      return Object.assign({}, EASY_INTERVALS, MEDIUM_INTERVALS, HARD_INTERVALS)
 
     default:
-      return EASY_INTERVALS
+      return Object.assign({}, EASY_INTERVALS)
   }
 }

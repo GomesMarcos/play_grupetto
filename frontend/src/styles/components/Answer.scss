@@ -1,0 +1,14 @@
+@import '../commons.scss';
+
+.answer{
+    &-wrapper{
+        display: flex;
+        justify-content:space-between;
+        position: relative;
+        top: 4rem;
+        // max-width: 80vw;
+    }
+}
+
+// @media screen and (max-width: $answer-wrapper) {
+// }
