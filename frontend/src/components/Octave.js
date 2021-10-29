@@ -3,7 +3,8 @@ import Key from './Key'
 
 function Octave({ octave, interval, is_enabled }) {
   return (
-    <div className={`octave${is_enabled ? ' enabled' : ' disabled'}`}>
+    <div className="octave">
+      <div className={`${is_enabled ? ' enabled' : ' disabled'}`}></div>
       <div className="key-wrapper">
         <Key
           note="C"
@@ -86,6 +87,7 @@ function Octave({ octave, interval, is_enabled }) {
         first_note={interval[0]}
         last_note={interval[1]}
       />
+      <div className="name">{octave.toString()}</div>
     </div>
   )
 }

@@ -1,6 +1,7 @@
 .octave {
   display: flex;
   justify-content: center;
+  position: relative;
   
   &-wrapper {
     display: flex;
@@ -8,7 +9,23 @@
     
     .disabled {
       background: $disabled_octave_bg;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 2;
+      cursor: not-allowed;
     }
+  }
+
+  .name {
+    position: absolute;
+    width: 85%;
+    top: 110%;
+    bottom: 0;
+    text-align: center;
+    height: fit-content;
+    border: 1px solid $key_border;
+    border-radius: 1rem;
   }
 
 }
