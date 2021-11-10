@@ -2,11 +2,11 @@
   display: flex;
   justify-content: center;
   position: relative;
-  
+
   &-wrapper {
     display: flex;
     justify-content: center;
-    
+
     .disabled {
       background: $disabled_octave_bg;
       width: 100%;
@@ -27,7 +27,6 @@
     border: 1px solid $key_border;
     border-radius: 1rem;
   }
-
 }
 
 .key-wrapper {

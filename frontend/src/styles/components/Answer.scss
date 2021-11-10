@@ -1,14 +1,19 @@
 @import '../commons.scss';
 
-.answer{
-    &-wrapper{
-        display: flex;
-        justify-content:space-between;
-        position: relative;
-        top: 4rem;
-        // max-width: 80vw;
-    }
-}
+.answer {
+  max-width: 6rem;
+  margin: 1rem 0;
 
-// @media screen and (max-width: $answer-wrapper) {
-// }
+  &-wrapper {
+    display: grid;
+    position: relative;
+    top: 4rem;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 7rem;
+    justify-items: center;
+  }
+
+  &.disabled {
+    display: none;
+  }
+}

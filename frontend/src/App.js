@@ -9,7 +9,8 @@ import axios from 'axios'
 import Loader from './components/Loader'
 
 function App() {
-  const loggedUserId = '123jcoij32' // mock
+  const loggedUserId = '123jcoij23' // mock
+  // const loggedUserId = '123jcoij32' // mock
   const [user, getUser] = useState({})
 
   useEffect(() => {
